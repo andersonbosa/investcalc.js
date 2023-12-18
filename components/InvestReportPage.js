@@ -17,7 +17,7 @@ export default function InvestReportPage () {
     <>
       <InvestReportForm onRelatorioGerado={handleRelatorioGerado} />
 
-      {relatorio && <InvestReport relatorio={relatorio} />}
+      {relatorio && <InvestReport report={relatorio} />}
     </>
   )
 }

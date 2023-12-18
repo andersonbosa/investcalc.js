@@ -1,7 +1,10 @@
 'use client'
 
-import gerarRelatorio from '@/lib/ReportEngine'
 import { useState } from 'react'
+
+
+import InvestReportEngine from '@/lib/ReportEngine'
+import gerarRelatorio from '@/lib/ReportEngine'
 
 function InvestReportForm ({ onRelatorioGerado }) {
   const [dados, setDados] = useState({
@@ -24,16 +27,13 @@ function InvestReportForm ({ onRelatorioGerado }) {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    // Converte strings para números
-    const dadosNumeros = Object.fromEntries(Object.entries(dados).map(([key, value]) => [key, parseFloat(value)]))
+    const reportEngine = new InvestReportEngine(dados)
 
-    // Chama a função gerarRelatorio com os dados fornecidos
-    const relatorio = gerarRelatorio(dadosNumeros)
-    onRelatorioGerado(relatorio)
+    onRelatorioGerado(reportEngine.getGeneralReport())
   }
 
   return (
-    <div className="bg-white p-8 rounded shadow-md max-w-md w-full">
+    <div className="bg-white p-4">
       <h1 className="text-2xl font-bold mb-4">Relatório de Investimento</h1>
 
       <form onSubmit={handleSubmit}>
@@ -49,7 +49,7 @@ function InvestReportForm ({ onRelatorioGerado }) {
               value={dados.nomeCripto}
               onChange={handleChange}
               className="w-full p-2 border rounded"
-              required
+            // required
             />
           </div>
         </div>
@@ -125,7 +125,11 @@ function InvestReportForm ({ onRelatorioGerado }) {
         </div>
 
         {/* Botão de Envio */}
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          onClick={() => scrollBy(0, 600)}
+        >
           Gerar Relatório
         </button>
       </form>
