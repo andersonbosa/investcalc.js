@@ -1,5 +1,5 @@
 
-import InvestReportPage from '@/components/InvestReportPage'
+import InvestReportPage from '@/components/organisms/InvestReportPage'
 
 export default function Home () {
 

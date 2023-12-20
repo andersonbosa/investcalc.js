@@ -3,12 +3,15 @@
 import html2pdf from 'html2pdf.js'
 
 function InvestReport ({ report }) {
-  const handleDownloadPDF = () => {
-    const content = document.getElementById('investReportContent')
-    const pdfOptions = { margin: 10, filename: 'invest_report.pdf', image: { type: 'jpeg', quality: 0.98 } }
 
-    html2pdf(content, pdfOptions)
-  }
+  // const handleDownloadPDF = () => {
+  //   const content = document.getElementById('investReportContent')
+  //   if (!content) return
+
+  //   const pdfOptions = { margin: 10, filename: 'invest_report.pdf', image: { type: 'jpeg', quality: 0.98 } }
+
+  //   html2pdf(content, pdfOptions)
+  // }
 
   return (
     <div className="bg-white p-4">
@@ -67,7 +70,7 @@ function InvestReport ({ report }) {
 
             </div>
             <div className="mb-4">
-            <h3 className="text-md font-semibold mb-2">Resumo</h3>
+              <h3 className="text-md font-semibold mb-2">Resumo</h3>
               <p className='text-justify'>
                 Com base nas condições fornecidas, seu investimento inicial de <code>{' '}${report.investimentoInicial.valorInvestidoDolar}{' '}</code>
                 em <code>{' '}{report.nomeCripto}{' '}</code> poderia resultar em um lucro total estimado de aproximadamente
@@ -81,13 +84,13 @@ function InvestReport ({ report }) {
 
 
           <div>
-            <button
+            {/* <button
               type="button"
               className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4"
               onClick={handleDownloadPDF}
             >
               Baixar Relatório em PDF
-            </button>
+            </button> */}
           </div>
         </>
       )}
