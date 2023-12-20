@@ -1,6 +1,6 @@
 'use client'
 
-import html2pdf from 'html2pdf.js'
+// import html2pdf from 'html2pdf.js'
 
 function InvestReport ({ report }) {
 

@@ -41,13 +41,13 @@ const MenuToggle = () => {
             </Link>
 
             {/* Use Link with a custom component */}
-            <Link href="/investir/rendavariavel" passHref onClick={handleToggle}>
+            {/* <Link href="/investir/rendavariavel" passHref onClick={handleToggle}>
               <li className="hover:bg-gray-100 py-1 cursor-pointer">
                 <div className="text-gray-700">
                   Calcular lucro em renda variável
                 </div>
               </li>
-            </Link>
+            </Link> */}
           </ul>
         </div>
       )}
