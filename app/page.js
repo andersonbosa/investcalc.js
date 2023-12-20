@@ -8,7 +8,7 @@ export default function Home () {
         <div>
           <div className='text-justify'>
             <div className="flex justify-center items-end gap-2">
-              <Image src={favicon} width={64} />
+              <Image src={favicon} width={64} alt="Favicon" />
               <h2 className="text-3xl font-semibold mb-4 text-center"> InvestCalc.js </h2>
             </div>
 
@@ -35,7 +35,7 @@ export default function Home () {
             <br />
 
             <p>
-              Usando o <strong>"Menu"</strong> explore as diferentes seções da aplicação para utilizar as funcionalidades disponíveis e
+              Usando o <strong>&quot;Menu&quot;</strong> explore as diferentes seções da aplicação para utilizar as funcionalidades disponíveis e
               aprender mais sobre investimentos. Estamos comprometidos em fornecer informações úteis
               para apoiar suas decisões financeiras.
             </p>

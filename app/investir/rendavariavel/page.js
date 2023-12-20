@@ -1,6 +1,4 @@
 
-import InvestReportPage from '@/components/InvestReportPage'
-
 export default function Home () {
 
   return (
